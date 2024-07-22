@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>कॉफीhouse</title>
+  <link rel="icon" type="image" href="favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<style>
+  .navbar {
+    background-color: #f5efe8;
+    height: 60px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-weight: 500;
+    color: #a3b18a;
+    font-size: 24px;
+    transition: 0.3s color;
+  }
+
+  .login-button {
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .login-button:hover {
+    background-color: #8f705b;
+  }
+
+  .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+  }
+
+  .navbar-toggler:focus,
+  btn-close:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-link {
+    color: black;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #6b5949;
+  }
+
+  @media (min-width:991px) {
+    .nav-link:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      visibility: hidden;
+      transition: 0.2s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link:active::before {
+      width: 100%;
+      visibility: visible;
+
+    }
+  }
+
+  .hero-section {
+    background: url(Ja\ usados.jpeg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+  }
+
+  .hero-section:before {
+    background-color: rgba(0, 0, 0, 0);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .hero-section .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .title {
+  font-family:'Cairo';
+  text-align: center;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  letter-spacing: 2px;
+  line-height:2
+}
+
+h1 {
+  background-image:url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 120px;
+  margin: 10px 0;
+}
+.sec{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box ;
+  font-family: sans-serif;
+  background-color:#6b5949;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+.me1{
+width: 90%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+margin:20px auto ;
+}
+.me1 h1{
+  font-size: 50px;
+  color: #8f705b;
+  margin-bottom: 25px;
+  position: relative;
+}
+.me1 h1::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display:block;
+  margin: 0 auto;
+  background-color: #8f705b;
+
+}
+.me1 p{
+  font-size: 18px;
+  color: #8f705b;
+  margin-bottom:35px; 
+}
+.me2{
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+
+}
+.me3{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.me4{
+  flex:1;
+  margin-right: 40px;
+  padding-left:0%;
+  overflow: hidden;
+}
+.me4 img{
+  max-width: 500px;
+  height: auto;
+  display: block;
+  float: left;
+  transition:0.3s ease;
+}
+.me4 img:hover{
+transform: scale(1.2);
+}
+.about-content {
+flex:1;
+padding-left:20px;
+}
+.about-content h2{
+  font-size: 50px;
+  margin-bottom: 15px;
+  padding-left: 52%;
+  color: #8f705b;
+
+}
+.about-content p{
+  font-size: 18px;
+  line-height:1.5;
+  padding-left: 50%;
+  color:#f5efe8;
+
+}
+.wrapper{
+  display: inline-flex;
+}
+.wrapper.dynamic-texts{
+overflow: hidden;
+position: relative;
+}
+
+.dynamic-texts li{
+list-style: none;
+color: antiquewhite;
+
+
+}
+.dynamic-texts li span{
+  position: relative;
+  background-color: #6b5949;
+}
+.dynamic-texts li span::after{
+content:"";
+position: absolute;
+left: 0;
+height: 100%;
+width: 100%;
+border-left:2px solid #8f705b ;
+
+}
+
+
+.about-content .our-story{
+  display: inline-block;
+  background-color: #8f705b;
+  padding: 10px 20px;
+  color: #997a66;
+  font-size: 19px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 19px;
+  transition: 0.3s ease;
+  color:#6b5949;
+  margin-left:20%;
+  padding-left: 35%;
+ 
+}
+
+.about-content .our-story:hover{
+  background-color: beige;
+}
+@media screen and(max-width: 768px){
+  .sec{
+    padding:0px 20px;
+  }
+  .about-content h2{
+   font-size: 36px;
+  }
+  .about-content p{
+    font-size: 16px;
+    margin-bottom: 0px;
+    padding: 16px;
+  }
+  .me4{
+    margin-right:0px;
+    margin-bottom: 20px;
+  }
+  .about-content .our-story{
+    font-size: 16px;
+  }
+}
+
+/* 
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+#myPageContent, section { 
+  height:100% !important; 
+  width:100% !important;
+}
+
+
+/* Slider */
+/* #textSlider.row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100% !important;
+}
+#textSlider div {
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+}
+
+.iamCol {
+    text-align: right;
+  float: left;
+  font-weight: 300;
+  font-size:30pt;
+}
+.iamCol p:nth-child(2) { margin-top: -20pt !important; }
+.slideCol {
+  text-align: left;
+    overflow: hidden;
+  font-weight: 900;
+  font-size:70pt;
+  display: block;
+  white-space: nowrap;
+}
+.slideCol p { margin: 0px !important; }
+
+.scroller {
+   height: 70pt;
+   line-height: 70pt;
+   overflow: hidden;
+}
+.scroller .inner { animation: 10s normal infinite running scroll; }
+@keyframes scroll {
+   0%   {margin-top: 0px;}
+   15%  {margin-top: 0px;}
+
+   25%  {margin-top: -70pt;}
+   40%  {margin-top: -70pt;}
+   
+   50%  {margin-top: -140pt;}
+   65%  {margin-top: -140pt;}
+
+   75%  {margin-top: -210pt;}
+   90%  {margin-top: -210pt;}
+
+   100% {margin-top: 0px;}
+} */ 
+
+h2{
+  padding-right:20px;
+}
+
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand me-auto" href=""><img src="android-chrome-512x512.png" width="200px" height="200px"></a>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="catering.html">Catering</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="orderonline.html">Order online</a>
+            </li>
+           
+          </ul>
+
+        </div>
+      </div>
+      <a href="menu.html" class="login-button">MENU</a>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <section class="hero-section">
+    <div class=" container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+      <div class="title">
+        <h1>कॉफीHouse</h1>
+    </div>
+  </section>
+  <section class="sec" id="about">
+    <font color="#6b5949"><h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore quisquam soluta ullam? Facere sunt tempora repellat totam, 
+      labore omnis animi qui ex dicta harum voluptatibus, iure quia iste? Deleniti?</h2></font>
+  <div class="me2">
+    <section class="me3">
+      <div class="me4">
+        <img src="eiliv-aceron-VdetvhJ_muE-unsplash.jpg">
+        <div class="about-content">
+          <div id="myPageContent" class="container-fluid">
+            <section id="home">
+              
+              
+            
+              
+            <!-- <div id="textSlider" class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 iamCol">
+                        <p>Enjoy</p>
+                        <p>Tremendous</p>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 slideCol">
+                        <div class="scroller">
+                          <div class="inner">
+                            <p>Breakfast</p>
+                            <p>Beverages</p>
+                            <p>Dessert</p>
+                            <p>Coffee</p>
+                          </div>
+                        </div>
+                      </div>
+              
+                    </div> -->
+              
+              
+              
+              
+              
+            </section
+           
+            <br><br><br><br><br>
+            <h2><center>कॉफी house start your दिन off</center></h2>
+  <p >In the heart of Chandigarh, nestled among the cobblestone streets and whispered secrets of decades past, you’ll find Coffeehouse since 1972—a haven for coffee lovers, dreamers, and seekers of soulful moments. Our story began over four decades ago, when a passionate barista named Aditi decided to turn a cozy corner into something magical.
+
+    Step into our cozy café and be greeted by the inviting aroma of freshly brewed espresso and the warm ambiance reminiscent of a traditional Parisian café. Our baristas are dedicated to crafting the perfect cup, whether it's a rich and velvety cappuccino, a bold espresso, or a smooth latte.
+    
+    Our kitchen serves up a delightful array of French-inspired dishes, from flaky croissants and buttery pain au chocolat to savory quiches and hearty baguette sandwiches. Each item is made with the finest ingredients, ensuring an authentic taste of France.
+    
+    Whether you're here for a quick coffee break, a leisurely brunch, कॉफीhouse provides the perfect setting. Join us and indulge in the flavors of France, right in your neighborhood.
+    <a href="knowmore.html" class="our-story">Know More</a>
+    </p>
+     
+    </section>
+  </div>
+  <hr>
+  <div class="footer2">
+    <footer >
+      <center> <font color="#f0ead2"><b><p>&copy;2024 कॉफीhouse . All rights reserved.</p></b></font></center>
+      </footer> 
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
